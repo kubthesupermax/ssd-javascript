@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+  </head>
+  <body>
+    <button>hello</button>
+    <button class="js-button">Second button</button>
+    <script>
+      /*
+      console.log(document.title);
+      document.title = "Changed";
+
+      // Note: When an HTML element is accessed via JavaScript (like document.body), it's represented as a DOM object, also called a node. //////////////////////////////////////////////////////////
+      // Example:
+      console.log(document.body);
+      console.log(typeof document.body);
+
+      console.log(document.body.innerHTML); // Get all the html inside the body element
+      document.body.innerHTML = "Changed"; //Check elements tab in dev tools, can also change it to another html element
+      document.body.innerHTML = "<h1>Good job!</h1>";
+      */
+
+      // document.querySelector() returns the first element that matches the specified selector
+      const button = document.querySelector("button");
+      console.log(button); //<button>hello</button>
+      console.log(button.innerHTML); //hello
+      button.innerHTML = "Changed";
+
+      // Specific element with class attribute. class name started with js- to specify that it's used in javascript
+      const buttonElement = document.querySelector(".js-button");
+      console.log(buttonElement); // <button class="js-button">Second button</button>
+      // Element or Elem used at end of variable name to specify that it's an element
+      console.log(buttonElement.innerHTML); //Second button
+    </script>
+  </body>
+</html>
