@@ -33,8 +33,6 @@ function renderTodoList() {
         renderTodoList();
       });
     });
-
-  console.log(index);
 }
 
 // Add todo
