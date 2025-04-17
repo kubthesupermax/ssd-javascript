@@ -6,6 +6,157 @@
     <title>Advanced functions</title>
   </head>
   <body>
-    <script></script>
+    <button onclick="" class="js-button">Click</button>
+    <script>
+      /* 
+  JavaScript Value Types:
+  - boolean
+  - number
+  - string
+  - null
+  - undefined
+  - function (yes, functions are also values!)
+
+  // Functions can be treated like any other value:
+  // - We can store them in variables
+  // - We can pass them as arguments
+  // - We can return them from other functions
+  Example:
+    */
+      const num = 2;
+
+      // Function expression
+      const function1 = function () {
+        console.log("hello2");
+      }; // function without a name is called an anonymous function
+
+      console.log(function1);
+      console.log(typeof function1); // function
+      function1(); // hello2
+
+      // Function declaration
+      // Advantages:
+      // 1. More readable – function names clearly describe what the code does.
+      // 2. Hoisting – can be called before they are defined in the code.
+
+      const object1 = {
+        num2: 2,
+
+        // Function declaration (named function inside object)
+        fun: function greeting() {
+          console.log("hello");
+        },
+
+        // Function expression (anonymous function assigned to a property)
+        fun2: function () {
+          console.log("hello2");
+        },
+
+        // Shorthand method syntax (ES6)
+        fun3() {
+          console.log("hello3");
+        },
+
+        // Arrow function (ES6)
+        fun4: () => {
+          console.log("hello4");
+        },
+      };
+
+      object1.fun();
+      object1.fun2();
+      object1.fun3();
+
+      function display(param) {
+        console.log(param);
+      }
+
+      display(2);
+
+      // 'run' takes a function as a parameter and calls it
+      function run(param) {
+        param();
+      }
+
+      // Passing an anonymous function (callback) that logs "hello4"
+      run(function () {
+        console.log("hello4");
+      });
+
+      // Practical example:
+      // setTimeout takes 2 parameters:
+      // 1. A callback function to run after the delay
+      // 2. A delay time in milliseconds (1 second = 1000 ms)
+
+      //Async code, doesn't block the main thread/code
+      /*
+      setTimeout(function () {
+        console.log("This runs after 3 seconds");
+      }, 3000);
+
+      console.log("next line");
+
+      // runs every 3 seconds
+      setInterval(function () {
+        console.log("This runs every 3 seconds");
+      }, 3000);
+*/
+      // Another way to loop through an array
+      todos = ["make dinner", "Wash dishes", "Watch youtube"];
+      todos.forEach((value, index) => {
+        if (value === "Wash dishes") {
+          return; // Same thing as continue
+        }
+        console.log(value);
+        console.log(index);
+      }); // More readable
+
+      // Practical example using forEach
+      // Go to 12 - todo list project
+
+      // Arrow functions
+      const arrowFunction = () => {};
+      arrowFunction();
+
+      // Event listeners
+      const eventListener = () => {
+        console.log("Clicked");
+      };
+
+      const buttonElement = document.querySelector(".js-button");
+      buttonElement.addEventListener("click", eventListener);
+
+      buttonElement.removeEventListener("click", eventListener);
+      buttonElement.addEventListener("click", () => {
+        console.log("Clicked2");
+      });
+
+      // Using addEventListener has several advantages over onClick:
+      // 1. Separation of concerns – keeps JavaScript out of HTML for cleaner code.
+      // 2. Supports multiple event handlers on the same element without overwriting.
+      // 3. Easier to remove later with removeEventListener.
+      // 4. More flexible – works with other event types and options (like once, capture).
+
+      // Filter
+      console.log(
+        [1, -3, 5].filter((value, index) => {
+          return value >= 0;
+        })
+      );
+      console.log(
+        [1, 1, 3].map((value, index) => {
+          //return value >= 0; //(3) [true, false, true]
+          return value + 10;
+        })
+      );
+
+      // Arrow function shortcuts
+      console.log([1, 1, 3].map((value) => value + 10));
+
+      //Closures
+      //Closures are functions that have access to variables in the parent scope
+      // Closure: If a function has access to a variable when it's created,
+      // it will always retain access to that variable—even after the outer function has finished executing.
+    </script>
   </body>
 </html>
