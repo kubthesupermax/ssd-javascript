@@ -116,3 +116,73 @@ function minMax(arr) {
 console.log(minMax([1, 2, 3, 4, 5]));
 console.log(minMax([23, 45, 67, 89, 12]));
 console.log(minMax([-1, -2, -3, -4, -5]));
+
+//11 o
+const randomWords = [
+  "book",
+  "pen",
+  "pencil",
+  "search",
+  "notebook",
+  "search",
+  "mouse",
+  "keyboard",
+  "search",
+];
+
+const randomWords2 = [
+  "book",
+  "pen",
+  "pencil",
+  "keyboard",
+  "search",
+  "notebook",
+];
+const randomWords3 = ["book", "pen", "pencil", "notebook"];
+
+// for (let i = 0; i < findSearch.length; i++) {
+//   if (findSearch[i] === "search") {
+//     console.log(i);
+//   }
+// }
+
+// 11p
+function findSearch(arr) {
+  let newArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === "search") {
+      newArr.push(i);
+    }
+  }
+
+  if (newArr.length > 1) {
+    return `The index of the first apperance of "search" is ${newArr[0]}`;
+  } else if (newArr.length === 1) {
+    console.log(newArr[0]);
+  } else {
+    return -1;
+  }
+}
+console.log(findSearch(randomWords));
+findSearch(randomWords2);
+console.log(findSearch(randomWords3));
+
+// 11q
+function findIndex(arr, word) {
+  let newArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === "search") {
+      newArr.push(i);
+    }
+  }
+
+  if (newArr.length >= 1) {
+    return newArr[0];
+  } else {
+    return -1;
+  }
+}
+
+console.log(findIndex(randomWords, "search"));
+console.log(findIndex(randomWords2, "search"));
+console.log(findIndex(randomWords3, "search"));
