@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coin flip</title>
+  </head>
+
+  <body>
+    <!-- <button class="js-heads-button">heads</button>
+  <button class="js-tails-button">tails</button> -->
+    <button
+      onclick="
+    document.querySelector('.js-choice')
+      .innerHTML = 'You chose: heads';
+  "
+      class="js-heads-button"
+    >
+      heads
+    </button>
+
+    <button
+      onclick="
+    document.querySelector('.js-choice')
+      .innerHTML = 'You chose: tails';
+  "
+      class="js-tails-button"
+    >
+      tails
+    </button>
+    <p class="js-choice"></p>
+
+    <input type="text" class="js-text-input" />
+    <button type="submit" class="js-submit-button">Submit</button>
+    <p class="js-display-text"></p>
+
+    <!-- <p class="js-chosen-button"></p> -->
+    <script src="09-coin-flip.js"></script>
+  </body>
+</html>

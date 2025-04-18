@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Projects Exercise</title>
+  </head>
+  <body>
+    <p>Youtube Subscribe Button</p>
+    <button
+      onclick="
+    subscribe();
+    "
+      class="js-subscribe-button"
+    >
+      Subscribe
+    </button>
+
+    <p>Amazon Shipping Calculator</p>
+    <input
+      placeholder="cost of order"
+      class="js-cost-input"
+      onkeydown=" 
+     // onkeydown triggers every time a key is pressed while focused on the element.
+     // console.log(event); 
+     // console.log(event.key);
+    // console.log('typing')  
+    handleCostKeydown(event);
+      "
+    />
+    <button
+      onclick="
+   calculateTotal();
+    "
+    >
+      Calculate
+    </button>
+
+    <p class="js-total-cost"></p>
+
+    //9h
+    <input
+      placeholder="hmm"
+      onKeyUp="
+      document.querySelector('.js-display-value').innerHTML = `${event.target.value}`
+      "
+    />
+
+    <p class="js-display-value"></p>
+    <script>
+      // Type coercion: JS automatically converts types during operations.
+      // Examples:
+      console.log("25" - 5); // → 20     (string coerced to number)
+      console.log("25" + 5); // → "255"  (number coerced to string)
+      console.log("5" * 2); // → 10     (string coerced to number)
+      console.log("10" / "2"); // → 5     (both strings coerced to numbers)
+      // Not advised: can cause unexpected bugs. Prefer explicit conversion like Number("25") or String(25).
+
+      // Window
+      // document represents the HTML content, while window represents the browser tab and global context.
+      // The document object is a property of the window object, which itself is the global object in browsers.
+      //window.document
+      window.console.log("hello");
+      //window.alert("hello");
+      // We don’t need to add 'window.' because its properties (like document, console, alert) are globally accessible by default in browsers.
+
+      function handleCostKeydown(event) {
+        if (event.key === "Enter") {
+          calculateTotal();
+        }
+      }
+      function calculateTotal() {
+        const inputElement = document.querySelector(".js-cost-input");
+        // console.log(inputElement.value);
+        let cost = Number(inputElement.value);
+
+        if (cost < 40) {
+          cost = cost + 10;
+          cost = Math.round(cost * 100) / 100; //9g
+        }
+
+        document.querySelector(".js-total-cost").innerHTML = `Total: $${cost}`;
+      }
+      function subscribe() {
+        const buttonElement = document.querySelector(".js-subscribe-button");
+
+        // innerText is safer than innerHTML when setting or reading text, as it avoids rendering HTML tags and preserves spacing/layout.
+
+        if (buttonElement.innerText === "Subscribe") {
+          buttonElement.innerHTML = "Subscribed";
+        } else {
+          buttonElement.innerHTML = "Subscribe";
+        }
+      }
+    </script>
+  </body>
+</html>
