@@ -14,7 +14,7 @@
 
     <button
       onclick="
-      cartQuantity++;
+      cartQuantity == 10 ? alert('Cart is full!') : cartQuantity++;
       console.log(`Cart quantity: ${cartQuantity}`);
     "
     >
@@ -23,7 +23,7 @@
 
     <button
       onclick="
-      cartQuantity += 2;
+      cartQuantity == 10 ? alert('Cart is full!') : cartQuantity += 2;
       console.log(`Cart quantity: ${cartQuantity}`);
     "
     >
@@ -32,7 +32,7 @@
 
     <button
       onclick="
-      cartQuantity = cartQuantity + 3;
+      cartQuantity == 10 ? alert('Cart is full!') : cartQuantity += 3;
       console.log(`Cart quantity: ${cartQuantity}`);
     "
     >
@@ -42,7 +42,7 @@
     <!-- vvv This code is new. vvv -->
     <button
       onclick="
-      cartQuantity += 4;
+      cartQuantity == 10 ? alert('Cart is full!') : cartQuantity += 4;
       console.log(`Cart quantity: ${cartQuantity}`);
     "
     >
@@ -51,7 +51,7 @@
 
     <button
       onclick="
-      cartQuantity += 5;
+      cartQuantity == 10 ? alert('Cart is full!') : cartQuantity += 5;
       console.log(`Cart quantity: ${cartQuantity}`);
     "
     >
@@ -61,7 +61,7 @@
 
     <button
       onclick="
-    cartQuantity--;
+    cartQuantity == 0 ? alert('Cart is empty!') : cartQuantity--;
     console.log(`Cart quantity: ${cartQuantity}`);
   "
     >
@@ -69,7 +69,7 @@
     </button>
     <button
       onclick="
-    cartQuantity -= 2;
+    cartQuantity == 0 ? alert('Cart is empty!') : cartQuantity -= 2;
     console.log(`Cart quantity: ${cartQuantity}`);
   "
     >
@@ -78,7 +78,7 @@
 
     <button
       onclick="
-    cartQuantity -=3;
+    cartQuantity == 0 ? alert('Cart is empty!') : cartQuantity -= 3;
     console.log(`Cart quantity: ${cartQuantity}`);
   "
     >
