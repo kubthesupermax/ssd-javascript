@@ -128,6 +128,7 @@ const randomWords = [
   "mouse",
   "keyboard",
   "search",
+  "keyboard",
 ];
 
 const randomWords2 = [
@@ -136,6 +137,7 @@ const randomWords2 = [
   "pencil",
   "keyboard",
   "search",
+  "pencil",
   "notebook",
 ];
 const randomWords3 = ["book", "pen", "pencil", "notebook"];
@@ -171,7 +173,7 @@ console.log(findSearch(randomWords3));
 function findIndex(arr, word) {
   let newArr = [];
   for (let i = 0; i < arr.length; i++) {
-    if (arr[i] === "search") {
+    if (arr[i] === word) {
       newArr.push(i);
     }
   }
@@ -183,8 +185,8 @@ function findIndex(arr, word) {
   }
 }
 
-console.log(findIndex(randomWords, "search"));
-console.log(findIndex(randomWords2, "search"));
+console.log(findIndex(randomWords, "pencil"));
+console.log(findIndex(randomWords2, "keyboard"));
 console.log(findIndex(randomWords3, "search"));
 
 //11 r
@@ -263,5 +265,98 @@ function removeLastTwoEggs(foods) {
   return foods.reverse();
 }
 
-console.log(removeLastTwoEggs(["egg", "apple", "egg", "egg", "banana"]));
+const foods = ["egg", "apple", "egg", "egg", "banana"];
+console.log(removeLastTwoEggs(foods));
+console.log(foods);
 // Output: ["apple", "egg", "banana"]
+
+//11 u
+function removeLastTwoEggs2(foods) {
+  const foodsCopy = foods.slice(); // create a copy of the original array
+  const reversedFoods = foodsCopy.reverse();
+
+  let eggCount = 0;
+  for (let i = 0; i < reversedFoods.length; i++) {
+    if (reversedFoods[i] === "egg") {
+      if (eggCount < 2) {
+        reversedFoods.splice(i, 1);
+        eggCount++;
+        i--;
+      }
+    }
+  }
+
+  return reversedFoods.reverse();
+}
+const foods2 = ["egg", "apple", "egg", "egg", "banana"];
+console.log(removeLastTwoEggs2(foods2));
+console.log(foods2);
+
+//11 v Fizzbuzz
+for (let i = 1; i <= 20; i++) {
+  if (i % 3 === 0 && i % 5 !== 0) {
+    console.log("fizz");
+  } else if (i % 5 === 0 && i % 3 !== 0) {
+    console.log("buzz");
+  } else if (i % 3 === 0 && i % 5 === 0) {
+    console.log("fizzbuzz");
+  } else {
+    console.log(i);
+  }
+}
+
+//11 w
+function findIndex(arr, word) {
+  let newArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === word) {
+      newArr.push(i);
+    }
+  }
+
+  if (newArr.length >= 1) {
+    return newArr[0];
+  } else {
+    return -1;
+  }
+}
+
+function unique(arr) {
+  let newArr = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    if (!newArr.includes(arr[i])) {
+      newArr.push(arr[i]);
+    }
+  }
+  return newArr;
+}
+
+function unique2(arr) {
+  let newArr = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    const word = arr[i];
+
+    if (findIndex(newArr, word) === -1) {
+      newArr.push(arr[i]);
+    }
+  }
+  return newArr;
+}
+
+const randomWords4 = [
+  "book",
+  "pen",
+  "pencil",
+  "search",
+  "book",
+  "search",
+  "mouse",
+  "keyboard",
+  "search",
+  "keyboard",
+];
+
+console.log(unique(randomWords4));
+console.log(unique2(randomWords4));
