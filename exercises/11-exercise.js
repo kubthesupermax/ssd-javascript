@@ -186,3 +186,82 @@ function findIndex(arr, word) {
 console.log(findIndex(randomWords, "search"));
 console.log(findIndex(randomWords2, "search"));
 console.log(findIndex(randomWords3, "search"));
+
+//11 r
+function removeEgg(foods) {
+  for (let i = foods.length - 1; i >= 0; i--) {
+    if (foods[i] !== "egg") continue;
+    foods.splice(i, 1);
+  }
+  return foods;
+}
+function removeEgg2(foods) {
+  let newFoods = [];
+  for (let i = 0; i < foods.length; i++) {
+    if (foods[i] !== "egg") {
+      newFoods.push(foods[i]);
+      continue;
+    }
+  }
+  return newFoods;
+}
+function removeEgg3(foods) {
+  const newFoods = foods.filter((food) => food !== "egg");
+  return newFoods;
+}
+
+function removeeggs5(foods) {
+  for (let i = 0; i < foods.length; i++) {
+    if (foods[i] === "egg") {
+      foods.splice(i, 1);
+      i--; // adjust index since we removed an item
+    }
+  }
+
+  return foods;
+}
+
+console.log(removeeggs5(["egg", "apple", "egg", "egg", "banana"]));
+console.log(removeEgg(["egg", "apple", "egg", "egg", "banana"]));
+console.log(removeEgg2(["egg", "apple", "egg", "egg", "banana"]));
+console.log(removeEgg3(["egg", "apple", "egg", "egg", "banana"]));
+
+//11 s
+function removeFirstTwoEggs(foods) {
+  let eggCount = 0;
+
+  for (let i = 0; i < foods.length; i++) {
+    if (foods[i] === "egg") {
+      if (eggCount < 2) {
+        foods.splice(i, 1);
+        eggCount++;
+        i--; // adjust index since we removed an item
+      }
+    }
+  }
+
+  return foods;
+}
+
+console.log(removeFirstTwoEggs(["egg", "apple", "egg", "egg", "banana"]));
+// Output: ["apple", "egg", "banana"]
+
+//11 t
+function removeLastTwoEggs(foods) {
+  let eggCount = 0;
+
+  for (let i = 0; i < foods.length; i++) {
+    if (foods.reverse()[i] === "egg") {
+      if (eggCount < 2) {
+        foods.splice(i, 1);
+        eggCount++;
+        i--; // adjust index since we removed an item
+      }
+    }
+  }
+
+  return foods.reverse();
+}
+
+console.log(removeLastTwoEggs(["egg", "apple", "egg", "egg", "banana"]));
+// Output: ["apple", "egg", "banana"]
