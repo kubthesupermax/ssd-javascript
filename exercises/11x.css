@@ -1,0 +1,51 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.todo-grid,
+.todo-input-grid {
+  display: grid;
+  grid-template-columns: 200px 150px 100px;
+  column-gap: 10px;
+  row-gap: 10px;
+  align-items: center;
+}
+
+.todo-input-grid {
+  margin-bottom: 10px;
+  align-items: stretch;
+}
+
+.name-input,
+.due-date-input {
+  font-size: 15px;
+  padding: 6px;
+}
+
+.add-todo-button {
+  background-color: green;
+  color: white;
+  border: none;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.delete-todo-button {
+  background-color: darkred;
+  color: white;
+  border: none;
+  padding: 10px 0;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+/*
+  In styles/11-todo-list.css, we used align-items: stretch in the .todo-input-grid to fix an alignment issue caused by align-items: center.
+  
+  Initially, we applied align-items: center to both .todo-grid and .todo-input-grid to vertically center elements—especially the delete buttons in each todo row. However, this had an unintended side effect in the top input section (.todo-input-grid): the "Add" button became vertically misaligned with the input fields.
+  
+  To resolve this, we specifically set align-items: stretch on .todo-input-grid, which restored the default stretching behavior and made the "Add" button align properly with the input fields.
+  
+  By keeping align-items: center for .todo-grid and overriding it with align-items: stretch for .todo-input-grid, we achieved the desired layout for both sections.
+  
+  */
