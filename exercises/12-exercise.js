@@ -62,3 +62,57 @@ buttonElement4.addEventListener("click", () => {
 });
 
 */
+// 12j and 12k
+const multtiply = (a, b) => a * b;
+
+console.log(multtiply(2, 3));
+
+//12L
+const nums = [1, 2, 3, -4, -5, 6, -7, 8];
+
+const countPositive = function (nums) {
+  let count = 0;
+  nums.forEach((element) => {
+    if (element > 0) {
+      count++;
+    }
+  });
+  return count;
+};
+
+console.log(countPositive(nums));
+
+//12M
+const addNum = (arr, num) => arr.map((element) => element + num);
+
+console.log(addNum([1, 2, 3, 4, 5], 10));
+
+//12n
+const removeEgg = function (foods) {
+  const filteredFoods = foods.filter((element) => {
+    if (element !== "egg") {
+      return element;
+    }
+  });
+  return filteredFoods;
+};
+
+console.log(removeEgg(["egg", "apple", "egg", "egg", "banana"]));
+
+//12o
+function removeEgg2(foods) {
+  let eggsRemoved = 0;
+
+  return foods.filter((food) => {
+    // If the food is 'egg', we should return false
+    // but only if we haven't removed 2 eggs already.
+    if (food === "egg" && eggsRemoved < 2) {
+      eggsRemoved++;
+      return false;
+    }
+
+    return true;
+  });
+}
+
+console.log(removeEgg2(["egg", "apple", "egg", "egg", "ham"]));
